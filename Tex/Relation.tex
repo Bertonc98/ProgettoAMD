@@ -32,7 +32,23 @@
 \newpage
 \tableofcontents
 \newpage
-
+\section{Introduction}
+The purpose of this paper is to present some of the techniques used in order to perform the so called "market/basket" analysis for a huge amount of data.
+At first these techniques were exploited for the analysis of purchases in markets, trying to find some relationships among the goods bought by customers.
+The idea behind these algorithms is to find associations between goods so that can be claimed that if a customer buy item A he is also likely to buy item B and vice versa.
+This concept could be extended to association between sets of goods (not only single item pairs) and to generic items instead of just goods, so that,  in the end, the aim of the algorithms that will be presented is to find frequent sets of items in all the baskets available.
+In particular, three main algorithms will be implemented:
+\begin{itemize}
+\item[-] A-priori:
+\vspace{-0.4cm}\begin{itemize}
+\item[-] base
+\vspace{-0.2cm}\item[-] PCY
+\end{itemize}
+\vspace{-0.4cm}\item[-] SON
+\vspace{-0.4cm}\item[-] Toivonen
+\end{itemize}
+Once the frequents sets are found, it is also important to check if all the items in one of these sets are actually associated one another:
+indeed, considering the environment these techniques come from, we could find that some goods, such as "milk" or "bread" are always frequent, but it cannot be claimed that there is a actual relationship with all the other items in the same frequent set, since it will be bought independently from the other.
 \section{Dataset}
 \section{Data structure}
 \section{Preprocessing}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.10)  25 MAY 2021 20:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.10)  31 MAY 2021 10:37
 entering extended mode
 **./Relation.tex
 (Relation.tex
@@ -650,15 +650,15 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write5
 \openout5 = `Relation.toc'.
 
- [2] Excluding 'comment' comment. [3] (Relation.aux)
+ [2] Excluding 'comment' comment. [3] [4] (Relation.aux)
 Package rerunfilecheck Info: File `Relation.out' has not changed.
-(rerunfilecheck)             Checksum: D272484837BD7DC9427B4319D558059C;811.
+(rerunfilecheck)             Checksum: A8159C8FD56BE24B3FA30B7E7F6B5FDA;914.
  ) 
 Here is how much of TeX's memory you used:
- 12680 strings out of 479334
- 195989 string characters out of 2857078
- 501730 words of memory out of 3000000
- 29933 multiletter control sequences out of 15000+200000
+ 12683 strings out of 479334
+ 196015 string characters out of 2857078
+ 504730 words of memory out of 3000000
+ 29934 multiletter control sequences out of 15000+200000
  409085 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,7n,74p,646b,329s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -667,9 +667,9 @@ cmbx12.pfb><C:/Users/Alberto/Documents/Universita/MiKtex/fonts/type1/public/ams
 fonts/cm/cmr12.pfb><C:/Users/Alberto/Documents/Universita/MiKtex/fonts/type1/pu
 blic/amsfonts/cm/cmr17.pfb><C:/Users/Alberto/Documents/Universita/MiKtex/fonts/
 type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Relation.pdf (3 pages, 59381 bytes).
+Output written on Relation.pdf (4 pages, 71265 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 12 named destinations out of 1000 (max. 500000)
- 57 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 93 PDF objects out of 1000 (max. 8388607)
+ 14 named destinations out of 1000 (max. 500000)
+ 65 words of extra memory for PDF output out of 10000 (max. 10000000)
 
