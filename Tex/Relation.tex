@@ -6,6 +6,7 @@
 \usepackage{comment}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{enumitem}
 \usepackage{graphicx}
 \usepackage[math]{cellspace}
     \cellspacetoplimit 4pt
@@ -38,7 +39,7 @@ At first these techniques were exploited for the analysis of purchases in market
 The idea behind these algorithms is to find associations between goods so that can be claimed that if a customer buy item A he is also likely to buy item B and vice versa.
 This concept could be extended to association between sets of goods (not only single item pairs) and to generic items instead of just goods, so that,  in the end, the aim of the algorithms that will be presented is to find frequent sets of items in all the baskets available.
 In particular, three main algorithms will be implemented:
-\begin{itemize}
+\vspace{-0.2cm}\begin{itemize}[leftmargin=*]
 \item[-] A-priori:
 \vspace{-0.4cm}\begin{itemize}
 \item[-] base
@@ -50,9 +51,47 @@ In particular, three main algorithms will be implemented:
 Once the frequents sets are found, it is also important to check if all the items in one of these sets are actually associated one another:
 indeed, considering the environment these techniques come from, we could find that some goods, such as "milk" or "bread" are always frequent, but it cannot be claimed that there is a actual relationship with all the other items in the same frequent set, since it will be bought independently from the other.
 \section{Dataset}
+The dataset in analysis is called "\href{https://www.kaggle.com/ashirwadsangwan/imdb-dataset}{IMDb dataset}" (version 6) created by data collected from the homonymous site IMDb. This dataset contains information about movies, their ratings and workers that have taken part in them. The data is divided into several files to simplify the analysis over specific aspect.
+\begin{itemize}[leftmargin=*]
+\vspace{-0.4cm}\item[-]{\it title.akas.tsv} contains informations about the localized version of the movies.
+\vspace{-0.4cm}\item[-]{\it title.basics.tsv} contains general information about the movies, not influenced by the localization.
+\vspace{-0.4cm}\item[-]{\it title.principals.tsv} contains information about the cast and the crew for each movie.
+\vspace{-0.4cm}\item[-]{\it title.ratings.tsv} contains the IMDb rating informations about the movies.
+\vspace{-1.0cm}\item[-]{\it name.basics.tsv} contains informations about the cast and the crew.
+\end{itemize}
+The aim of the analysis presented is to find sets of actors that have frequently worked together so only a few of these datasets will be used: in particular {\it title.principal.tsv} from which is possible create baskets of actors for every movie and {\it name.basics.tsv} from which is possible retrieve the names of the actors from their IDs.
 \section{Data structure}
+{\it title.principal.tsv} is a tsv file with the subsequent structure:
+\begin{itemize}[leftmargin=*]
+\vspace{-0.4cm}\item[-]{\it tconst} (string) is an alphanumeric identifier of the movie.
+\vspace{-0.4cm}\item[-]{\it ordering} (integer) is a number used to uniquely identify rows for a given movie.
+\vspace{-0.4cm}\item[-]{\it nconst} (string) is an alphanumeric identifier of the cast/crew person.
+\vspace{-0.4cm}\item[-]{\it category} (string) is the role of that person in the movie (a person can do different roles in the same movie).
+\vspace{-0.4cm}\item[-]{\it job} (string) is a further specification of the role (can be empty, with the symbol "\textbackslash N").
+\vspace{-0.4cm}\item[-]{\it characters} (string) is the name of the character played (can be empty, with the symbol"\textbackslash N").
+\end{itemize}
+There are 36.499.704 rows for 5.710.740 different movies.\\
+Only rows with an actor are considered, so the analysis is done over 14.830.233 rows.\\
+Movies without any registered actor need to be filtered, reducing the number of movies to 3.602.200.\\
+In the end the number of different actors in this dataset is 1.868.056.\\
+The size of {\it title.principal.tsv} is 1.6 GB.\\
+
+\noindent
+{\it name.basics.tsv} isa  tsv file with the subsequent structure:
+\begin{itemize}[leftmargin=*]
+\vspace{-0.4cm}\item[-]{\it nconst } (string) is an alphanumeric identifier of the cast/crew person.
+\vspace{-1.1cm}\item[-]{\it primaryName } (string) the name of the person.
+\vspace{-0.4cm}\item[-]{\it birthYear } (YYYY) year of birth.
+\vspace{-0.4cm}\item[-]{\it deathYear  } (YYYY) year of death.
+\vspace{-0.4cm}\item[-]{\it primaryProfession } (array of strings) the top 3 profession of the person.
+\vspace{-1.0cm}\item[-]{\it knownForTitles  } (array of tconst) movies the person is known for (can be empty).
+\end{itemize}
+There are 9.711.022 rows in this file with only 3.625.895 people marked as actor/actress.
 \section{Preprocessing}
+These datasets need to be formatted into precise structure in order to apply the market/basket analysis algorithms. For each movie is created the basket (a list) containing all the IDs for the actors that have played a role in it. \\
+The actors are identified, into the baskets, with an integer ID, obtained from their alphanumeric ID (nconsts).
 \section{Algorithms applied}
+
 \section{Scaling of proposed solutions}
 \section{Experiments}
 \section{Results}

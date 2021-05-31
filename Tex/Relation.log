@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.10)  31 MAY 2021 10:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.10)  31 MAY 2021 18:26
 entering extended mode
 **./Relation.tex
 (Relation.tex
@@ -166,6 +166,14 @@ Package caption Info: Standard document class detected.
 Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
 \c@subfigure=\count270
 \c@subtable=\count271
+) (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/enumitem\enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip55
+\enit@outerparindent=\dimen165
+\enit@toks=\toks28
+\enit@inbox=\box49
+\enit@count@id=\count272
+\enitdp@description=\count273
 ) (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/graphics\graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -184,8 +192,8 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen165
-\Gin@req@width=\dimen166
+\Gin@req@height=\dimen166
+\Gin@req@width=\dimen167
 )
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/cellspace\cellspace.sty
 Package: cellspace 2019/03/11 v1.8.1 Spacing table cells (JN)
@@ -194,105 +202,105 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/latex-tools\array.sty
 Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
-\col@sep=\dimen167
-\ar@mcellbox=\box49
-\extrarowheight=\dimen168
-\NC@list=\toks28
-\extratabsurround=\skip55
-\backup@length=\skip56
-\ar@cellbox=\box50
+\col@sep=\dimen168
+\ar@mcellbox=\box50
+\extrarowheight=\dimen169
+\NC@list=\toks29
+\extratabsurround=\skip56
+\backup@length=\skip57
+\ar@cellbox=\box51
 )
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/latex-tools\calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count272
-\calc@Bcount=\count273
-\calc@Adimen=\dimen169
-\calc@Bdimen=\dimen170
-\calc@Askip=\skip57
-\calc@Bskip=\skip58
+\calc@Acount=\count274
+\calc@Bcount=\count275
+\calc@Adimen=\dimen170
+\calc@Bdimen=\dimen171
+\calc@Askip=\skip58
+\calc@Bskip=\skip59
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count274
-\calc@Cskip=\skip59
+\calc@Ccount=\count276
+\calc@Cskip=\skip60
 )
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/xkeyval\xkeyval.sty
 Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
 
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/generic/xkeyval\xkeyval.tex
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/generic/xkeyval\xkvutils.tex
-\XKV@toks=\toks29
-\XKV@tempa@toks=\toks30
+\XKV@toks=\toks30
+\XKV@tempa@toks=\toks31
 )
-\XKV@depth=\count275
+\XKV@depth=\count277
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-\cellspacetoplimit=\dimen171
-\cellspacebottomlimit=\dimen172
-\cellspace@firstht=\dimen173
-\cellspace@lastdp=\dimen174
+\cellspacetoplimit=\dimen172
+\cellspacebottomlimit=\dimen173
+\cellspace@firstht=\dimen174
+\cellspace@lastdp=\dimen175
 )
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/titlesec\titletoc.sty
 Package: titletoc 2019/10/16 v2.13 TOC entries
-\ttl@leftsep=\dimen175
+\ttl@leftsep=\dimen176
 )
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count276
-\float@exts=\toks31
-\float@box=\box51
-\@float@everytoks=\toks32
-\@floatcapt=\box52
+\c@float@type=\count278
+\float@exts=\toks32
+\float@box=\box52
+\@float@everytoks=\toks33
+\@floatcapt=\box53
 )
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/algorithm2e\algorithm2e
 .sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count277
-\algocf@hangindent=\skip60
+\c@AlgoLine=\count279
+\algocf@hangindent=\skip61
 
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/ifoddpage\ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count278
+\c@checkoddpage=\count280
 )
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/latex-tools\xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 ) (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/relsize\relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
-\skiptotal=\skip61
-\skiplinenumber=\skip62
-\skiprule=\skip63
-\skiphlne=\skip64
-\skiptext=\skip65
-\skiplength=\skip66
-\algomargin=\skip67
-\skipalgocfslide=\skip68
-\algowidth=\dimen176
-\inoutsize=\dimen177
-\inoutindent=\dimen178
-\interspacetitleruled=\dimen179
-\interspacealgoruled=\dimen180
-\interspacetitleboxruled=\dimen181
-\algocf@ruledwidth=\skip69
-\algocf@inoutbox=\box53
-\algocf@inputbox=\box54
-\AlCapSkip=\skip70
-\AlCapHSkip=\skip71
-\algoskipindent=\skip72
-\algocf@nlbox=\box55
-\algocf@hangingbox=\box56
-\algocf@untilbox=\box57
-\algocf@skipuntil=\skip73
-\algocf@capbox=\box58
-\algocf@lcaptionbox=\skip74
-\algoheightruledefault=\skip75
-\algoheightrule=\skip76
-\algotitleheightruledefault=\skip77
-\algotitleheightrule=\skip78
-\c@algocfline=\count279
-\c@algocfproc=\count280
-\c@algocf=\count281
-\algocf@algoframe=\box59
-\algocf@algobox=\box60
+\skiptotal=\skip62
+\skiplinenumber=\skip63
+\skiprule=\skip64
+\skiphlne=\skip65
+\skiptext=\skip66
+\skiplength=\skip67
+\algomargin=\skip68
+\skipalgocfslide=\skip69
+\algowidth=\dimen177
+\inoutsize=\dimen178
+\inoutindent=\dimen179
+\interspacetitleruled=\dimen180
+\interspacealgoruled=\dimen181
+\interspacetitleboxruled=\dimen182
+\algocf@ruledwidth=\skip70
+\algocf@inoutbox=\box54
+\algocf@inputbox=\box55
+\AlCapSkip=\skip71
+\AlCapHSkip=\skip72
+\algoskipindent=\skip73
+\algocf@nlbox=\box56
+\algocf@hangingbox=\box57
+\algocf@untilbox=\box58
+\algocf@skipuntil=\skip74
+\algocf@capbox=\box59
+\algocf@lcaptionbox=\skip75
+\algoheightruledefault=\skip76
+\algoheightrule=\skip77
+\algotitleheightruledefault=\skip78
+\algotitleheightrule=\skip79
+\c@algocfline=\count281
+\c@algocfproc=\count282
+\c@algocf=\count283
+\algocf@algoframe=\box60
+\algocf@algobox=\box61
 )
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/imakeidx\imakeidx.sty
 Package: imakeidx 2016/10/15 v1.3e Package for typesetting indices in a synchro
@@ -307,28 +315,27 @@ Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/latex-tools\multicol.st
 y
 Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
-\c@tracingmulticols=\count282
-\mult@box=\box61
-\multicol@leftmargin=\dimen182
-\c@unbalance=\count283
-\c@collectmore=\count284
-\doublecol@number=\count285
-\multicoltolerance=\count286
-\multicolpretolerance=\count287
-\full@width=\dimen183
-\page@free=\dimen184
-\premulticols=\dimen185
-\postmulticols=\dimen186
-\multicolsep=\skip79
-\multicolbaselineskip=\skip80
-\partial@page=\box62
-\last@line=\box63
-\maxbalancingoverflow=\dimen187
-\mult@rightbox=\box64
-\mult@grightbox=\box65
-\mult@gfirstbox=\box66
-\mult@firstbox=\box67
-\@tempa=\box68
+\c@tracingmulticols=\count284
+\mult@box=\box62
+\multicol@leftmargin=\dimen183
+\c@unbalance=\count285
+\c@collectmore=\count286
+\doublecol@number=\count287
+\multicoltolerance=\count288
+\multicolpretolerance=\count289
+\full@width=\dimen184
+\page@free=\dimen185
+\premulticols=\dimen186
+\postmulticols=\dimen187
+\multicolsep=\skip80
+\multicolbaselineskip=\skip81
+\partial@page=\box63
+\last@line=\box64
+\maxbalancingoverflow=\dimen188
+\mult@rightbox=\box65
+\mult@grightbox=\box66
+\mult@gfirstbox=\box67
+\mult@firstbox=\box68
 \@tempa=\box69
 \@tempa=\box70
 \@tempa=\box71
@@ -365,15 +372,16 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \@tempa=\box102
 \@tempa=\box103
 \@tempa=\box104
-\c@minrows=\count288
-\c@columnbadness=\count289
-\c@finalcolumnbadness=\count290
-\last@try=\dimen188
-\multicolovershoot=\dimen189
-\multicolundershoot=\dimen190
-\mult@nat@firstbox=\box105
-\colbreak@box=\box106
-\mc@col@check@num=\count291
+\@tempa=\box105
+\c@minrows=\count290
+\c@columnbadness=\count291
+\c@finalcolumnbadness=\count292
+\last@try=\dimen189
+\multicolovershoot=\dimen190
+\multicolundershoot=\dimen191
+\mult@nat@firstbox=\box106
+\colbreak@box=\box107
+\mc@col@check@num=\count293
 ))
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
@@ -418,9 +426,9 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
-\@linkdim=\dimen191
-\Hy@linkcounter=\count292
-\Hy@pagecounter=\count293
+\@linkdim=\dimen192
+\Hy@linkcounter=\count294
+\Hy@pagecounter=\count295
  (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -437,7 +445,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count294
+\Hy@SavedSpaceFactor=\count296
  (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/hyperref\puenc.def
 File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -450,14 +458,14 @@ Package hyperref Info: Plain pages OFF on input line 4207.
 Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count295
+\c@Hy@tempcnt=\count297
 
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4804.
-\XeTeXLinkMargin=\dimen192
+\XeTeXLinkMargin=\dimen193
 
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -467,9 +475,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count296
-\Field@Width=\dimen193
-\Fld@charsize=\dimen194
+\Fld@menulength=\count298
+\Field@Width=\dimen194
+\Fld@charsize=\dimen195
 Package hyperref Info: Hyper figures OFF on input line 6075.
 Package hyperref Info: Link nesting OFF on input line 6080.
 Package hyperref Info: Hyper index ON on input line 6083.
@@ -485,9 +493,9 @@ Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
 )
-\Hy@abspage=\count297
-\c@Item=\count298
-\c@Hfootnote=\count299
+\Hy@abspage=\count299
+\c@Item=\count300
+\c@Hfootnote=\count301
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/hyperref\hpdftex.def
@@ -498,8 +506,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
 with kernel methods
 )
-\Fld@listcount=\count300
-\c@bookmark@seq@number=\count301
+\Fld@listcount=\count302
+\c@bookmark@seq@number=\count303
 
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/rerunfilecheck\rerunfil
 echeck.sty
@@ -512,36 +520,36 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
-\Hy@SectionHShift=\skip81
+\Hy@SectionHShift=\skip82
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 23.
+Package hyperref Info: Option `colorlinks' set `true' on input line 24.
 
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2021-03-02 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count302
-\l__pdf_internal_box=\box107
+\l__color_backend_stack_int=\count304
+\l__pdf_internal_box=\box108
 ) (Relation.aux)
 \openout1 = `Relation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -585,17 +593,17 @@ Package caption Info: End \AtBeginDocument code.
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count303
-\scratchdimen=\dimen195
-\scratchbox=\box108
-\nofMPsegments=\count304
-\nofMParguments=\count305
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count306
-\MPscratchDim=\dimen196
-\MPnumerator=\count307
-\makeMPintoPDFobject=\count308
-\everyMPtoPDFconversion=\toks34
+\scratchcounter=\count305
+\scratchdimen=\dimen196
+\scratchbox=\box109
+\nofMPsegments=\count306
+\nofMParguments=\count307
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count308
+\MPscratchDim=\dimen197
+\MPnumerator=\count309
+\makeMPintoPDFobject=\count310
+\everyMPtoPDFconversion=\toks35
 )
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -611,7 +619,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
-Package hyperref Info: Link coloring ON on input line 30.
+Package hyperref Info: Link coloring ON on input line 31.
  (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -622,22 +630,22 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count309
+\c@section@level=\count311
 )
-LaTeX Info: Redefining \ref on input line 30.
-LaTeX Info: Redefining \pageref on input line 30.
-LaTeX Info: Redefining \nameref on input line 30.
+LaTeX Info: Redefining \ref on input line 31.
+LaTeX Info: Redefining \pageref on input line 31.
+LaTeX Info: Redefining \nameref on input line 31.
  (Relation.out) (Relation.out)
 \@outlinefile=\write4
 \openout4 = `Relation.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 32.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 33.
 
 
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 33.
 
 
 (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/amsfonts\umsb.fd
@@ -650,26 +658,46 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write5
 \openout5 = `Relation.toc'.
 
- [2] Excluding 'comment' comment. [3] [4] (Relation.aux)
+ [2] [3]
+Overfull \hbox (7.87317pt too wide) in paragraph at lines 59--60
+[]\OT1/cmr/m/it/14.4 title.ratings.tsv \OT1/cmr/m/n/14.4 con-tains the IMDb rat
+-ing in-for-ma-tions about the movies.
+ []
+
+[4]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 7
+0.
+ (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/base\omscmr.fd
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <14.4> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 70.
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--78
+
+ []
+
+[5] Excluding 'comment' comment. [6] (Relation.aux)
 Package rerunfilecheck Info: File `Relation.out' has not changed.
 (rerunfilecheck)             Checksum: A8159C8FD56BE24B3FA30B7E7F6B5FDA;914.
  ) 
 Here is how much of TeX's memory you used:
- 12683 strings out of 479334
- 196015 string characters out of 2857078
- 504730 words of memory out of 3000000
- 29934 multiletter control sequences out of 15000+200000
- 409085 words of font info for 48 fonts, out of 3000000 for 9000
+ 13027 strings out of 479334
+ 201847 string characters out of 2857078
+ 512242 words of memory out of 3000000
+ 30268 multiletter control sequences out of 15000+200000
+ 409683 words of font info for 50 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,7n,74p,646b,329s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 71i,7n,74p,646b,457s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Alberto/Documents/Universita/MiKtex/fonts/type1/public/amsfonts/cm/
 cmbx12.pfb><C:/Users/Alberto/Documents/Universita/MiKtex/fonts/type1/public/ams
 fonts/cm/cmr12.pfb><C:/Users/Alberto/Documents/Universita/MiKtex/fonts/type1/pu
 blic/amsfonts/cm/cmr17.pfb><C:/Users/Alberto/Documents/Universita/MiKtex/fonts/
-type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Relation.pdf (4 pages, 71265 bytes).
+type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alberto/Documents/Universita/MiKt
+ex/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on Relation.pdf (6 pages, 86694 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 14 named destinations out of 1000 (max. 500000)
+ 106 PDF objects out of 1000 (max. 8388607)
+ 16 named destinations out of 1000 (max. 500000)
  65 words of extra memory for PDF output out of 10000 (max. 10000000)
 
