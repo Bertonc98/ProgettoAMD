@@ -91,24 +91,24 @@ There are 9.711.022 rows in this file with only 3.625.895 people marked as actor
 These datasets need to be formatted into precise structure in order to apply the market/basket analysis algorithms. For each movie is created the basket (a list) containing all the IDs for the actors that have played a role in it. \\
 The actors are identified, into the baskets, with an integer ID, obtained from their alphanumeric ID (nconsts).
 \section{Algorithms applied}
-The algorithms implemented aim to obtain the list of frequent itemsets (sets of actors) in our preprocessed baskets exploiting the property of monotonicity in different ways, from trivial form to more complex but more efficiently. Since these algorithm are created to work well over big amount of data is important underline the number of times an algorithm pass over the data, and the number of itemsets created to be marked frequent or not.\\
-The most trivial approach is the A-priori algorithm, which scan multiple times the baskets in order to construct and filter itemsets of increasing size until there aren't more. In this way there are n pass over the data, which is a problem if the number of baskets grows. The number of candidates frequent itemsets is very high at every passage, because for every frequent itemset of size k need to create every possible combination of size k+1 from them.\\
-An improvement of this algorithm is the PCY (Park, Chen, Yu) that exploit the free memory present in memory while counting the frequency of itemsets of size k, creating an hashmap in which counts the number of times an itemset of size k+1 is reached in baskets (is possible have collisions, but this approach aim to reduce the number of itemsets to be saved in memory and for which need to count the frequency, not to directly delete not frequent itemsets). The hashmap is compressed into a bitmap to save space and permitting to create only itemsets marked as possible frequent in this map. To reach frequent itemsets of size k need to pass k times over data, as the previous algorithm, but is possible reduce the candidates at every iteration.
+The algorithms implemented aim to obtain the list of frequent itemsets (sets of actors) in our preprocessed baskets exploiting the property of monotonicity in different ways, from trivial form to more complex but more efficiently. Since these algorithm are created to work well over big amount of data is important underline the number of times an algorithm pass over the data, and the number of candidates itemsets created to be checked frequent or not. Is useful represent every item with an integer value to simplify the handling, reducing the space and to be able to hash them.\\
+\subsection{A-priori}
+The most trivial approach is the A-priori algorithm, which scans multiple times the baskets in order to construct and filter itemsets of increasing size until there aren't more. In this way are done n passages over the data, one for every size of itemset reached. The number of candidates frequent itemsets can become very high, because for every frequent itemset of size k need to create every possible combination of size k+1 from them, count the frequency for each candidates and filter only frequent ones, using a lot of space for candidates that will be discarded if not frequent.\\
+\subsection{PCY (single hash}
+An improvement of this algorithm is the PCY (Park, Chen, Yu) that exploit the free space present in memory while counting the frequency of itemsets of size k, creating an hashmap in which counts, in the position indicated by the hash of the itemset of size k+1, the number of times the latter occurs in the baskets (is possible have collisions, but this approach aims to reduce the number of itemsets to be saved in memory and for which need to count the frequency, not to directly delete every not frequent itemsets). The hashmap is compressed into a bitmap to save space and permitting to create only itemsets marked as possible frequent in this map. To reach frequent itemsets of size k need to pass k times over data, as the previous algorithm, but is possible reduce the candidates at every iteration. 
+\subsection{SON}
+This algorithm is developed to parallelize the computation of frequent itemsets, working over chunks (partition) of the data. It's not a proper sampling algorithm because it will work on every chunk and, in the end, the totality of data will be elaborated.\\
+It'a a way to use the previous implementations (A-priori/PCY) in a distributed form, to reduce the single workload over a chunk and parallelize the computation, and then put together the results. Is important enforce appropriate adjustment to run the A-priori over every chunk, like the repositioning of the threshold that divide frequent itemsets fron not frequent.\\
+\subsection{Toivonen}
+This algorithm, as the previously, exploits the A-priori or PCY implementation  to 
 
 
-\vspace{-0.2cm}\begin{itemize}[leftmargin=*]
-\item[-] A-priori:
-\vspace{-0.4cm}\begin{itemize}
-\item[-] base
-\vspace{-0.2cm}\item[-] PCY
-\end{itemize}
-\vspace{-0.4cm}\item[-] SON
-\vspace{-0.4cm}\item[-] Toivonen
-\end{itemize}
+
 \section{Scaling of proposed solutions}
 \section{Experiments}
 \section{Results}
 {\it I/We declare that this material, which I/We now submit for assessment, is entirely my/our own work and has not been taken from the work of others, save and to the extent that such work has been cited and acknowledged within the text of my/our work. I/We understand that plagiarism, collusion, and copying are grave and serious offences in the university and accept the penalties that would be imposed should I engage in plagiarism, collusion or copying. This assignment, or any part of it, has not been previously submitted by me/us or any other person for assessment on this or any other course of study.}
+
 \begin{comment}
 The report should contain the following information:
 
