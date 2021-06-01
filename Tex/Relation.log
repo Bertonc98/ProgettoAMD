@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.10)  1 JUN 2021 10:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.10)  1 JUN 2021 22:29
 entering extended mode
 **./Relation.tex
 (Relation.tex
@@ -678,24 +678,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 73--78
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 94--95
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
-[6] [7] Excluding 'comment' comment. [8] (Relation.aux)
-Package rerunfilecheck Info: File `Relation.out' has not changed.
-(rerunfilecheck)             Checksum: 4BCF1B5EB410A9CDA62D1AFFBB187491;1084.
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 100--102
+
+ []
+
+[7] [8] Excluding 'comment' comment. [9] (Relation.aux)
+
+Package rerunfilecheck Warning: File `Relation.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Relation.out':
+(rerunfilecheck)             Before: 3CCADCF591916E5555F23962059E2939;1329
+(rerunfilecheck)             After:  7581FD29008FAAA0F732ACD639A73554;1457.
  ) 
 Here is how much of TeX's memory you used:
- 13044 strings out of 479334
- 202050 string characters out of 2857078
+ 13050 strings out of 479334
+ 202130 string characters out of 2857078
  512246 words of memory out of 3000000
- 30278 multiletter control sequences out of 15000+200000
+ 30280 multiletter control sequences out of 15000+200000
  411626 words of font info for 58 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,7n,74p,825b,457s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -705,9 +711,9 @@ fonts/cm/cmr12.pfb><C:/Users/Alberto/Documents/Universita/MiKtex/fonts/type1/pu
 blic/amsfonts/cm/cmr17.pfb><C:/Users/Alberto/Documents/Universita/MiKtex/fonts/
 type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alberto/Documents/Universita/MiKt
 ex/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Relation.pdf (8 pages, 92787 bytes).
+Output written on Relation.pdf (9 pages, 97762 bytes).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
- 20 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 146 PDF objects out of 1000 (max. 8388607)
+ 24 named destinations out of 1000 (max. 500000)
+ 97 words of extra memory for PDF output out of 10000 (max. 10000000)
 

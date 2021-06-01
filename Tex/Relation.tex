@@ -91,7 +91,7 @@ There are 9.711.022 rows in this file with only 3.625.895 people marked as actor
 These datasets need to be formatted into precise structure in order to apply the market/basket analysis algorithms. For each movie is created the basket (a list) containing all the IDs for the actors that have played a role in it. \\
 The actors are identified, into the baskets, with an integer ID, obtained from their alphanumeric ID (nconsts).
 \section{Algorithms applied}
-The algorithms implemented aim to obtain the list of frequent itemsets (sets of actors) in our preprocessed baskets exploiting the property of monotonicity in different ways, from trivial form to more complex but more efficiently. Since these algorithm are created to work well over big amount of data is important underline the number of times an algorithm pass over the data, and the number of candidates itemsets created to be checked frequent or not. Is useful represent every item with an integer value to simplify the handling, reducing the space and to be able to hash them.\\
+The algorithms implemented aim to obtain the list of frequent itemsets (sets of actors) in our preprocessed baskets exploiting the property of monotonicity in different ways, from trivial form to more complex but more efficiently. Since these algorithm are created to work well over big amount of data is important to underline the number of times an algorithm pass over the data, and the number of candidates itemsets created to be checked frequent or not. It is useful to represent each item with an integer value to simplify the handling, reducing the space and to be able to hash them.
 \subsection{A-priori}
 The most trivial approach is the A-priori algorithm, which scans multiple times the baskets in order to construct and filter itemsets of increasing size until there aren't more. In this way are done n passages over the data, one for every size of itemset reached. The number of candidates frequent itemsets can become very high, because for every frequent itemset of size k need to create every possible combination of size k+1 from them, count the frequency for each candidates and filter only frequent ones, using a lot of space for candidates that will be discarded if not frequent.\\
 \subsection{PCY (single hash}
@@ -100,8 +100,9 @@ An improvement of this algorithm is the PCY (Park, Chen, Yu) that exploit the fr
 This algorithm is developed to parallelize the computation of frequent itemsets, working over chunks (partition) of the data. It's not a proper sampling algorithm because it will work on every chunk and, in the end, the totality of data will be elaborated.\\
 It'a a way to use the previous implementations (A-priori/PCY) in a distributed form, to reduce the single workload over a chunk and parallelize the computation, and then put together the results. Is important enforce appropriate adjustment to run the A-priori over every chunk, like the repositioning of the threshold that divide frequent itemsets fron not frequent.\\
 \subsection{Toivonen}
-This algorithm, as the previously, exploits the A-priori or PCY implementation  to 
-
+This algorithm, as the previously, exploits the A-priori or PCY implementation to obtain the frequent itemsets of a sample of the complete data (providing the adjusted threshold). This algorithm exploits the notion of \textbf{Negative Border} that once created will be used to check if the frequent itemsets in the sample are frequent even globally. The negative border is built extracting every itemsets that is not frequent but that have frequent immediate subsets. The algorithm, operating just over the sample can say if the candidate frequent itemsets are the right ones even for the totality of data, with a single passage over the complete dataset.
+\subsection{Implementation}
+These algorithms have been implemented with python using a sequential way for the PCY and the MapReduce paradigm to apply the PCY according the SON and Toivonen philosophy.
 
 
 \section{Scaling of proposed solutions}
