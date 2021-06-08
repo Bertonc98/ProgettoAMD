@@ -89,7 +89,7 @@ The size of {\it title.principal.tsv} is 1.6 GB.\\
 There are 9.711.022 rows in this file with only 3.625.895 people marked as actor/actress.
 \section{Preprocessing}
 The data used need to be preprocessed in order to make them suitable for the algorithms that will be presented.\\
-The main dataset used is the {\it title.principals.tsv}, since it contains all the information needed: the main idea in this phase is to group all the rows by the {\it tconst} (movie id), and take all the {\it nconst} that refers to an actor ({\itcategory}).\\
+The main dataset used is the {\it title.principals.tsv}, since it contains all the information needed: the main idea in this phase is to group all the rows by the {\it tconst} (movie id), and take all the {\it nconst} that refers to an actor ({\it category}).\\
 Once this operation is performed, the resulting data are organized in sets (or baskets) of actors' IDs (one for each movie) so the only action left to perform is to change them, with an integer instead of a string: indeed, all the IDs are in the form of "nm" followed by a number, so it is rather easy to change them just cutting the first part.\\
 In the end the completely transformed data are saved on mass memory.\\
 
