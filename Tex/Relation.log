@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.10)  8 JUN 2021 09:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.10)  8 JUL 2021 22:19
 entering extended mode
 **./Relation.tex
 (Relation.tex
@@ -687,15 +687,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 115--117
 
  []
 
-[8] [9] Excluding 'comment' comment. [10] (Relation.aux)
+[8] [9] [10] Excluding 'comment' comment. [11] (Relation.aux)
 Package rerunfilecheck Info: File `Relation.out' has not changed.
-(rerunfilecheck)             Checksum: F7E3AD810ED28B023BFA925E563914A4;1465.
+(rerunfilecheck)             Checksum: 2BD11120B73D8B6DD5B00CE648967F42;2459.
  ) 
 Here is how much of TeX's memory you used:
- 13052 strings out of 479334
- 202153 string characters out of 2857078
- 513248 words of memory out of 3000000
- 30281 multiletter control sequences out of 15000+200000
+ 13061 strings out of 479334
+ 202280 string characters out of 2857078
+ 513251 words of memory out of 3000000
+ 30285 multiletter control sequences out of 15000+200000
  411626 words of font info for 58 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,7n,74p,700b,457s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -705,9 +705,9 @@ fonts/cm/cmr12.pfb><C:/Users/Alberto/Documents/Universita/MiKtex/fonts/type1/pu
 blic/amsfonts/cm/cmr17.pfb><C:/Users/Alberto/Documents/Universita/MiKtex/fonts/
 type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alberto/Documents/Universita/MiKt
 ex/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Relation.pdf (10 pages, 100663 bytes).
+Output written on Relation.pdf (11 pages, 106732 bytes).
 PDF statistics:
- 156 PDF objects out of 1000 (max. 8388607)
- 25 named destinations out of 1000 (max. 500000)
- 105 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 184 PDF objects out of 1000 (max. 8388607)
+ 30 named destinations out of 1000 (max. 500000)
+ 137 words of extra memory for PDF output out of 10000 (max. 10000000)
 
