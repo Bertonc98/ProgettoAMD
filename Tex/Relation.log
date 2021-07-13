@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.10)  8 JUL 2021 22:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.10)  13 JUL 2021 23:20
 entering extended mode
 **./Relation.tex
 (Relation.tex
@@ -659,55 +659,112 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout5 = `Relation.toc'.
 
  [2] [3]
-Overfull \hbox (7.87317pt too wide) in paragraph at lines 59--60
+Overfull \hbox (7.87317pt too wide) in paragraph at lines 64--65
 []\OT1/cmr/m/it/14.4 title.ratings.tsv \OT1/cmr/m/n/14.4 con-tains the IMDb rat
 -ing in-for-ma-tions about the movies.
  []
 
 [4]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 7
-0.
+4.
  (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/base\omscmr.fd
 File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <14.4> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 70.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 74.
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--78
+Underfull \hbox (badness 10000) in paragraph at lines 77--82
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--95
+Overfull \hbox (0.60635pt too wide) in paragraph at lines 93--99
+\OT1/cmr/m/n/14.4 which is pos-si-ble cre-ate sets of ac-tors from each movie a
+nd \OT1/cmr/m/it/14.4 name.basics.tsv
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 101--107
 
  []
 
-[5] [6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 115--117
+[6] [7]
+<apriori.jpg, id=143, 833.1125pt x 169.63374pt>
+File: apriori.jpg Graphic file (type jpg)
+<use apriori.jpg>
+Package pdftex.def Info: apriori.jpg  used on input line 122.
+(pdftex.def)             Requested size: 441.54753pt x 89.90544pt.
+ [8 <./apriori.jpg>] [9] [10]
+<size_by_hsize.png, id=157, 402.50375pt x 279.0425pt>
+File: size_by_hsize.png Graphic file (type png)
+<use size_by_hsize.png>
+Package pdftex.def Info: size_by_hsize.png  used on input line 173.
+(pdftex.def)             Requested size: 402.50276pt x 279.04181pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--174
 
  []
 
-[8] [9] [10] Excluding 'comment' comment. [11] (Relation.aux)
+[11]
+<pcy_hsize_time.png, id=163, 383.4325pt x 279.0425pt>
+File: pcy_hsize_time.png Graphic file (type png)
+<use pcy_hsize_time.png>
+Package pdftex.def Info: pcy_hsize_time.png  used on input line 183.
+(pdftex.def)             Requested size: 383.43156pt x 279.04181pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--185
+
+ []
+
+[12 <./size_by_hsize.png>]
+<times.png, id=170, 383.4325pt x 262.9825pt>
+File: times.png Graphic file (type png)
+<use times.png>
+Package pdftex.def Info: times.png  used on input line 186.
+(pdftex.def)             Requested size: 383.43156pt x 262.98184pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
+
+ []
+
+[13 <./pcy_hsize_time.png>]
+File: times.png Graphic file (type png)
+<use times.png>
+Package pdftex.def Info: times.png  used on input line 191.
+(pdftex.def)             Requested size: 383.43156pt x 262.98184pt.
+ [14 <./times.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 195--197
+
+ []
+
+[15] Excluding 'comment' comment. [16] (Relation.aux)
 Package rerunfilecheck Info: File `Relation.out' has not changed.
-(rerunfilecheck)             Checksum: 2BD11120B73D8B6DD5B00CE648967F42;2459.
+(rerunfilecheck)             Checksum: 16B68700D1123E9353015CB31B0FD1D3;2592.
  ) 
 Here is how much of TeX's memory you used:
- 13061 strings out of 479334
- 202280 string characters out of 2857078
+ 13091 strings out of 479334
+ 202724 string characters out of 2857078
  513251 words of memory out of 3000000
- 30285 multiletter control sequences out of 15000+200000
+ 30305 multiletter control sequences out of 15000+200000
  411626 words of font info for 58 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,7n,74p,700b,457s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 71i,8n,74p,646b,523s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Alberto/Documents/Universita/MiKtex/fonts/type1/public/amsfonts/cm/
 cmbx12.pfb><C:/Users/Alberto/Documents/Universita/MiKtex/fonts/type1/public/ams
-fonts/cm/cmr12.pfb><C:/Users/Alberto/Documents/Universita/MiKtex/fonts/type1/pu
-blic/amsfonts/cm/cmr17.pfb><C:/Users/Alberto/Documents/Universita/MiKtex/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alberto/Documents/Universita/MiKt
-ex/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Relation.pdf (11 pages, 106732 bytes).
+fonts/cm/cmmi12.pfb><C:/Users/Alberto/Documents/Universita/MiKtex/fonts/type1/p
+ublic/amsfonts/cm/cmr10.pfb><C:/Users/Alberto/Documents/Universita/MiKtex/fonts
+/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Alberto/Documents/Universita/MiKt
+ex/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Alberto/Documents/Univers
+ita/MiKtex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alberto/Document
+s/Universita/MiKtex/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on Relation.pdf (16 pages, 184080 bytes).
 PDF statistics:
- 184 PDF objects out of 1000 (max. 8388607)
- 30 named destinations out of 1000 (max. 500000)
- 137 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 222 PDF objects out of 1000 (max. 8388607)
+ 35 named destinations out of 1000 (max. 500000)
+ 157 words of extra memory for PDF output out of 10000 (max. 10000000)
 

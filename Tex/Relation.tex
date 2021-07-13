@@ -56,7 +56,7 @@ In particular, three main algorithms will be implemented:
 \vspace{-0.4cm}\item[-] Toivonen
 \end{itemize}
 \section{Dataset}
-The dataset the dataset on which the analysis was carried out is the "\href{https://www.kaggle.com/ashirwadsangwan/imdb-dataset}{IMDb dataset}" (version 6). It is composed by data collected from the homonymous site IMDb. This dataset contains information about movies, their ratings and workers that have taken part in them. The data is divided into several files to simplify the analysis over specific aspect:
+The dataset the dataset on which the analysis was carried out is the "\href{https://www.kaggle.com/ashirwadsangwan/imdb-dataset}{IMDb dataset}" (version 6). It is composed by data collected from the homonymous site IMDb. This dataset contains information about movies (long, short, tv series), their ratings and workers that have taken part in them. The data is divided into several files to simplify the analysis over specific aspect:
 \begin{itemize}[leftmargin=*]
 \vspace{-0.4cm}\item[-]{\it title.akas.tsv} contains informations about the localized version of the movies.
 \vspace{-0.4cm}\item[-]{\it title.basics.tsv} contains general information about the movies, not influenced by the localization.
@@ -107,32 +107,31 @@ In the end the completely transformed data are saved on secondary storage.\\
 
 \section{Algorithms applied}
 In this section are presented the algorithms used with the aim of obtaining the list of frequent itemsets (sets of actors in our case).\\
-But first it is important to explain the property the algorithms are based on:
-the antimonotonicity property says that if a set is not frequent then all the its superset are not frequent. This property is fundamental since it allows to discard all the non-frequent sets from the analysis and so reducing the magnitude of computation.\\
+But first it is important to explain the property the algorithms are based on the anti-monotonicity property says that if a set is not frequent then all the its superset are not frequent. This property is fundamental since it allows to discard all the non-frequent sets from the analysis and so reducing the magnitude of computation.\\
 Another fact to point out before starting with the description of the algorithms is that they are designed in order to work with a huge amount of data (big enough that can not fit in memory), so for all of them will be given particular attention to the number of mass memory access performed, which makes them slower.
 \subsection{A-priori}
-The first approach implemented is the basic A-priori algorithm. This algorithm can be outlined by two phases: 
+The first approach implemented is the basic A-priori algorithm. This algorithm can be outlined by two phases:
 \begin{itemize}[leftmargin=*]
 	\vspace{-0.4cm}\item[-] Construction: in this phase all the sets of dimension k are built from the frequent ones of dimension k-1. For implementation purposes, it will be shown that this phase contains a sorting pre-phase in which all the sets of dimension k-1 are sorted.
-	\vspace{-1.1cm}\item[-] Filtering: in this phase all the new (candidate frequent ) sets obtained are filtered by their frequency, so that if they do not reach a given threshold they are discarded (according to the antimonotonicity property).
+	\vspace{-0.4cm}\item[-] Filtering: in this phase all the new (candidate frequent ) sets obtained are filtered by their frequency, so that if they do not reach a given threshold they are discarded (according to the antimonotonicity property).
 \end{itemize}
 At the very first step the algorithm starts counting the number of occurrences of each item in the dataset (singleton), so in this phase the main memory is partially filled and the first scan of the data is performed. Once all the frequencies are found, the singletons are filtered using a predefined threshold.\\
-Now, the algorithm scans again the dataset and for each basket builds a list of all the combinations of dimension 2 with items contained, discarding those that contains a non frequent sigleton, then the memory is filled also with the pairs and their frequency. Again, the filtering step is performed.\\
-From this point, the algorithm looks for all the tuples of dimension k > 2 and it becomes important the sorting pre-phase mentioned before: in order to avoid duplications all the frequent tuples of dimension k-1 are "joined" if they have in common the first k-2 elements, then all the possible tuples of dimension k are built so that it is possible to check if a tuple is present or not in that basket.\\
-These steps continue until it is not possible to find a single tuple of dimension k that is frequent.
-
+Now, the algorithm scans again the dataset and for each basket builds a list of all the combinations of dimension 2 with items contained, not counting the frequency for the pairs composed by non frequent singletons. Again, the filtering step is performed.\\
+From this point, the algorithm looks for all the tuples of dimension k $>$ 2 and it becomes important the sorting pre-phase mentioned before: in order to avoid duplications all the frequent tuples of dimension k-1 are "joined" if they have in common the first k-2 elements, then all the possible tuples of dimension k are built so that it is possible to check if a tuple is present or not in that basket.\\
+These steps continue until it is not possible to find a single tuple of dimension k that is frequent.\\
+\includegraphics[scale=0.53]{apriori.jpg}
 
 \subsection{PCY (single hash)}
 An improvement of this algorithm is the PCY (Park, Chen, Yu) that exploit the memory's free space while counting the frequency of itemsets of given size k:
 as the base apriori algorithm does the first step is the counting of singleton frequency, but in this step, for each basket also all the pairs of items are computed
-and with the use of an hash function they are mapped into a position in an hashmap and the corresponding position in is updated incrementing the value by one. Once the baskets are fully scanned the hashmap is compressed into a bitmap, substituting with a 1 all those positions whose frequencies are above a threshold, 0 otherwise. 
+and with the use of an hash function they are mapped into a position in an hashmap and the corresponding position is updated incrementing the value by one. Once the baskets are fully scanned the hashmap is compressed into a bitmap, substituting with a 1 all those positions whose frequencies are above a threshold, 0 otherwise.
 Of course the use of hash functions brings "collisions" so it is not sure that what a given hashmap position contains is the frequency of a single pair, but it is sure that if a frequency is not above the threshold all the pairs mapped in that position are not frequent.\\
-At the next step, the pairs' frequencies are computed but only if the corrisponding bit in the bitmap is a 1.
+At the next step, the pairs' frequencies are computed but only if the corrisponding bit in the bitmap is a 1 the frequency counter is created.
 This version of the apriori algorithm allows to reduce significantly the number of sets kept in memory at each step, using the same number of access in the secondary storage of the basic apriori algorithm.
  
 \subsection{SON}
 This algorithm is designed with the purpose of parallelizing the computation of frequent itemsets, working over chunks (partition) of the data.\\
-The idea is to exploit the basic apriori and the PCY algorithm but in a distributed manner so to reduce the computational workload:
+The idea is to exploit the basic apriori and the PCY algorithm but in a distributed manner so to reduce the computational workload:\\
 The algorithm starts applying the Apriori or PCY on a single chunk, using as threshold for each chunk p*s, where p is the fraction of total baskets contained in a single chunck (so 1/p is the number of chunks), then all the results obtained are putted together and all the dataset is fully scanned in order to delete false positive, since a chunck can find a set whose support in bigger then p*s, but the sum of the frequencies coming from all the chunks is below s.
 
 
@@ -148,17 +147,54 @@ These algorithms have been implemented with python using a sequential way for th
 
 \section{Scaling of proposed solutions}
 \section{Experiments}
-\subsection{Size of candidates with different algorithms}
-Over the whole dataset
+\subsection{Size of candidates and timing with different algorithms}
+Over the whole dataset the four algorithm has returned:
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| } 
+ \hline
+ Size & Apriori & PCY & SON apriori & SON PCY \\
+ \hline
+ 1 & 11144462 & 11144462 & 11144052 & 11144052\\ 
+ 2 & 10011 & 33 & 708645 & 708645\\ 
+ 3 & 13 & 13 & 1104 & 1104\\ 
+ 4 & 2 & 2 & 554 & 554 \\
+ 5 & - & - & 355 & 355 \\
+ 6 & - & - & 182 & 182 \\
+ 7 & - & - & 62 & 62 \\
+ 8 & - & - & 12 & 12 \\
+ 9 & - & - & 1 & 1 \\
+ \hline
+ Sec & 87 & 335 & 275 & 551\\
+ \hline
+\end{tabular}
+\end{center}
+\subsection{Size of candidates and times with different hash size (PCY)}
+Over a sample of 600000 baskets\\
+\includegraphics[scale=1]{size_by_hsize.png}\\
+\begin{center}
+\begin{tabular}{ |c||c|c|c|c|c|c|c|c|c| } 
+ \hline
+ Hash size & $2^{12}$ & $2^{13}$ & $2^{14}$ & $2^{15}$ & $2^{16}$ & $2^{17}$ & $2^{18}$ & $2^{19}$ & $2^{20}$ \\
+ \hline
+ Candidates & 10603 & 10603 & 7266 & 292 & 93 & 50 & 40 & 38 & 38\\
+ \hline
+\end{tabular}
+\end{center}
+\includegraphics[scale=1]{pcy_hsize_time.png}\\
+MISS SON PCY TIMING\\
 
-Apriori, PCY, SON apriori, SON PCY
-\subsection{Size of candidates with different hash size PCY}
+\includegraphics[scale=1]{times.png}\\
+
 \subsection{Time at change of threshold}
-Apriori, PCY, SON apriori, SON PCY
-IMPORTANT
-In SON it's the worst time of a chunk and the time or aggregation and filtering
+Over the same sample, containing 600000 baskets, the algorithms has been completed in:\\
+TABLE\\
+\includegraphics[scale=1]{times.png}
+\\
+In the SON application (both with apriori and PCY) have been saved the worst time over a node, due to the parallelization of the search, not the sum of the execution time of each node.
 \subsection{Size of negative border}
 With different size of sample
+The singletons are not counted, as their creation will not be affected from the PCY algorithm.\\
+
 With different threshold
 \section{Results}
 {\it I/We declare that this material, which I/We now submit for assessment, is entirely my/our own work and has not been taken from the work of others, save and to the extent that such work has been cited and acknowledged within the text of my/our work. I/We understand that plagiarism, collusion, and copying are grave and serious offences in the university and accept the penalties that would be imposed should I engage in plagiarism, collusion or copying. This assignment, or any part of it, has not been previously submitted by me/us or any other person for assessment on this or any other course of study.}
