@@ -722,35 +722,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 183--185
  []
 
 [12 <./size_by_hsize.png>]
-<times.png, id=170, 383.4325pt x 262.9825pt>
-File: times.png Graphic file (type png)
-<use times.png>
-Package pdftex.def Info: times.png  used on input line 186.
-(pdftex.def)             Requested size: 383.43156pt x 262.98184pt.
+<sonpcy_candidates.png, id=170, 415.5525pt x 279.0425pt>
+File: sonpcy_candidates.png Graphic file (type png)
+<use sonpcy_candidates.png>
+Package pdftex.def Info: sonpcy_candidates.png  used on input line 186.
+(pdftex.def)             Requested size: 415.55148pt x 279.04181pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 186--187
 
  []
 
 [13 <./pcy_hsize_time.png>]
+<times.png, id=177, 383.4325pt x 262.9825pt>
 File: times.png Graphic file (type png)
 <use times.png>
 Package pdftex.def Info: times.png  used on input line 191.
 (pdftex.def)             Requested size: 383.43156pt x 262.98184pt.
- [14 <./times.png>]
+ [14 <./sonpcy_candidates.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 195--197
 
  []
 
-[15] Excluding 'comment' comment. [16] (Relation.aux)
+[15 <./times.png>] Excluding 'comment' comment. [16] (Relation.aux)
 Package rerunfilecheck Info: File `Relation.out' has not changed.
 (rerunfilecheck)             Checksum: 16B68700D1123E9353015CB31B0FD1D3;2592.
  ) 
 Here is how much of TeX's memory you used:
- 13091 strings out of 479334
- 202724 string characters out of 2857078
+ 13097 strings out of 479334
+ 202869 string characters out of 2857078
  513251 words of memory out of 3000000
- 30305 multiletter control sequences out of 15000+200000
+ 30310 multiletter control sequences out of 15000+200000
  411626 words of font info for 58 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,8n,74p,646b,523s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -762,9 +763,9 @@ ublic/amsfonts/cm/cmr10.pfb><C:/Users/Alberto/Documents/Universita/MiKtex/fonts
 ex/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Alberto/Documents/Univers
 ita/MiKtex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alberto/Document
 s/Universita/MiKtex/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Relation.pdf (16 pages, 184080 bytes).
+Output written on Relation.pdf (16 pages, 193098 bytes).
 PDF statistics:
- 222 PDF objects out of 1000 (max. 8388607)
+ 224 PDF objects out of 1000 (max. 8388607)
  35 named destinations out of 1000 (max. 500000)
- 157 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 162 words of extra memory for PDF output out of 10000 (max. 10000000)
 
