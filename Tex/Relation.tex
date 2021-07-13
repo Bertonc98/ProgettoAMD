@@ -26,7 +26,7 @@
 \linespread{1.2}
 \title{{\Huge Market Basket Analysis}\\{\Large Master in Data Science}}
 \bigskip
-\author{\bigskip \\ \bigskip{\Large Alberto Bertoncini 983833}\\ \smallskip{\Large Massimo Cavagna 9838??}\\ \bigskip \href{https://github.com/Bertonc98/ProgettoAMD}{Github repository} }
+\author{\bigskip \\ \bigskip{\Large Alberto Bertoncini 983833}\\ \smallskip{\Large Massimo Cavagna 983820}\\ \bigskip \href{https://github.com/Bertonc98/ProgettoAMD}{Github repository} }
 
 \begin{document}
 \maketitle
@@ -35,9 +35,16 @@
 \newpage
 \section{Introduction}
 The purpose of this paper is to present some of the techniques used in order to perform the so called "market/basket" analysis for a huge amount of data.
-At first these techniques were exploited for the analysis of purchases in markets, trying to find some relationships among the goods bought by customers.
-The idea behind these algorithms is to find associations between goods so that can be claimed that if a customer buy item A he is also likely to buy item B and vice versa.
-This concept could be extended to association between sets of goods (not only single item pairs) and to generic items instead of just goods, so that,  in the end, the aim of the algorithms that will be presented is to find frequent sets of items in all the baskets available.
+At first, these techniques were exploited for the analysis of purchases in markets, trying to find some relationships among goods bought by customers.
+The idea is to try to discover associations between goods so that can be claimed that if a customer buy item (or a set of items) A he is also likely to buy item (or a set of items) B.
+This relationship between A and B it is also called "association rule" and it is denoted as A $\rightarrow$ B.
+Given A $\rightarrow$ B, in order to find out if it is a relevant association rule in a dataset some indexes must be taken into account:
+\begin{itemize}[leftmargin=*]
+	\vspace{-0.4cm}\item[-]{frequency/support}: the first requirement of an association rule to be considered "important" is the "high" frequency, so that can be observed that buying A and B together is something that occurs multiple times. An association rule is frequent if its frequency is above a given threshold.
+	\vspace{-0.4cm}\item[-]{confidence}: given A $\rightarrow$ B, it states the probability that a customer buys B given that he bought A (P(B|A)). If an association rule is frequent and has high confidence it is called "strong".
+	\vspace{-0.4cm}\item[-]{interest}: it tells if A and B are independent, directly or inversely correlated.
+\end{itemize}
+A general method that can be used to extract strong association rule is to find frequent itemsets and then to compute all the possible association rules between the subsets of each frequent itemset checking their confidence. Anyway, the focus of this paper will be entirely in showing how to extract frequent itemset from a large dataset.
 In particular, three main algorithms will be implemented:
 \vspace{-0.2cm}\begin{itemize}[leftmargin=*]
 \item[-] A-priori:
@@ -48,10 +55,8 @@ In particular, three main algorithms will be implemented:
 \vspace{-0.4cm}\item[-] SON
 \vspace{-0.4cm}\item[-] Toivonen
 \end{itemize}
-Once the frequents sets are found, it is also important to check if all the items in one of these sets are actually associated one another:
-indeed, considering the environment these techniques come from, we could find that some goods, such as "milk" or "bread" are always frequent, but it cannot be claimed that there is a actual relationship with all the other items in the same frequent set, since it will be bought independently from the other.
 \section{Dataset}
-The dataset in analysis is called "\href{https://www.kaggle.com/ashirwadsangwan/imdb-dataset}{IMDb dataset}" (version 6) created by data collected from the homonymous site IMDb. This dataset contains information about movies, their ratings and workers that have taken part in them. The data is divided into several files to simplify the analysis over specific aspect.
+The dataset the dataset on which the analysis was carried out is the "\href{https://www.kaggle.com/ashirwadsangwan/imdb-dataset}{IMDb dataset}" (version 6). It is composed by data collected from the homonymous site IMDb. This dataset contains information about movies, their ratings and workers that have taken part in them. The data is divided into several files to simplify the analysis over specific aspect:
 \begin{itemize}[leftmargin=*]
 \vspace{-0.4cm}\item[-]{\it title.akas.tsv} contains informations about the localized version of the movies.
 \vspace{-0.4cm}\item[-]{\it title.basics.tsv} contains general information about the movies, not influenced by the localization.
@@ -59,7 +64,6 @@ The dataset in analysis is called "\href{https://www.kaggle.com/ashirwadsangwan/
 \vspace{-0.4cm}\item[-]{\it title.ratings.tsv} contains the IMDb rating informations about the movies.
 \vspace{-1.0cm}\item[-]{\it name.basics.tsv} contains informations about the cast and the crew.
 \end{itemize}
-The aim of the analysis presented is to find sets of actors that have frequently worked together so only a few of these datasets will be used: in particular {\it title.principal.tsv} from which is possible create baskets of actors for every movie and {\it name.basics.tsv} from which is possible retrieve the names of the actors from their IDs.
 \section{Data structure}
 {\it title.principal.tsv} is a tsv file with the subsequent structure:
 \begin{itemize}[leftmargin=*]
@@ -87,35 +91,57 @@ The size of {\it title.principal.tsv} is 1.6 GB.\\
 \vspace{-1.0cm}\item[-]{\it knownForTitles  } (array of tconst) movies the person is known for (can be empty).
 \end{itemize}
 There are 9.711.022 rows in this file with only 3.625.895 people marked as actor/actress.
+\\
+\\
+All the algorithms listed above will work analyzing sets of actors, so for each movie
+will be defined an set of actors that worked in it.
+Because of this, only a few datasets will be used: in particular {\it title.principal.tsv} from which is possible create sets of actors from each movie and {\it name.basics.tsv} from which is possible retrieve the names of the actors from their IDs.
+
 \section{Preprocessing}
-The data used need to be preprocessed in order to make them suitable for the algorithms that will be presented.\\
-The main dataset used is the {\it title.principals.tsv}, since it contains all the information needed: the main idea in this phase is to group all the rows by the {\it tconst} (movie id), and take all the {\it nconst} that refers to an actor ({\it category}).\\
-Once this operation is performed, the resulting data are organized in sets (or baskets) of actors' IDs (one for each movie) so the only action left to perform is to change them, with an integer instead of a string: indeed, all the IDs are in the form of "nm" followed by a number, so it is rather easy to change them just cutting the first part.\\
-In the end the completely transformed data are saved on mass memory.\\
+Before starting with the description and the implementation of the algorithms
+data must be preprocessed in order to make them in a suitable form.\\
+As already said, one of the main dataset used is the {\it title.principals.tsv}, since it contains all the information needed: the main idea in this phase is to group all the rows by the {\it tconst} (movie id), and take all the {\it nconst} that refers to an actor ({\it category}). Once this operation is performed, the resulting data are organized in sets (or baskets) of actors' IDs (one for each movie), so the next step is checking if all the baskets respect the "set shape" by deleting all the replicated IDs inside each basket.\\ 
+The sets/baskets of IDs are groups of string values, so just for saving space purpose
+the only action left is to change them with an integer: all the IDs are in the form of "nm" followed by a number, so it is rather easy to change them just cutting the first part.\\
+In the end the completely transformed data are saved on secondary storage.\\
 
 \section{Algorithms applied}
-In this section are presented the algorithms studied and implemented. The main idea behind them is to obtain the list of frequent itemsets (sets of actors in our case) exploiting the property of monotonicity in order to reduce  the number of candidates frequent sets: the theoretical assumption is that if an itemset is frequent then all its subsets are frequent.\\
-All the algorithms described are designed in order to work with a huge amount of data (big enough that can not fit in memory), so in all the sections will be given particular attention to the number of mass memory access performed, which makes them slower.
+In this section are presented the algorithms used with the aim of obtaining the list of frequent itemsets (sets of actors in our case).\\
+But first it is important to explain the property the algorithms are based on:
+the antimonotonicity property says that if a set is not frequent then all the its superset are not frequent. This property is fundamental since it allows to discard all the non-frequent sets from the analysis and so reducing the magnitude of computation.\\
+Another fact to point out before starting with the description of the algorithms is that they are designed in order to work with a huge amount of data (big enough that can not fit in memory), so for all of them will be given particular attention to the number of mass memory access performed, which makes them slower.
 \subsection{A-priori}
 The first approach implemented is the basic A-priori algorithm. This algorithm can be outlined by two phases: 
 \begin{itemize}[leftmargin=*]
 	\vspace{-0.4cm}\item[-] Construction: in this phase all the sets of dimension k are built from the frequent ones of dimension k-1. For implementation purposes, it will be shown that this phase contains a sorting pre-phase in which all the sets of dimension k-1 are sorted.
-	\vspace{-1.1cm}\item[-] Filtering: in this phase all the new (candidate frequent ) sets obtained are filtered by their frequency, so that if they do not reach a given threshold they are discarded.
+	\vspace{-1.1cm}\item[-] Filtering: in this phase all the new (candidate frequent ) sets obtained are filtered by their frequency, so that if they do not reach a given threshold they are discarded (according to the antimonotonicity property).
 \end{itemize}
-The algorithm starts counting the number of occurrences of each item in the dataset, so in this phase the main memory is partially filled and the first scan of the data is performed. Once all the frequencies are found, the singletons are filtered using a predefined threshold.\\
-Now, the algorithm scans again the dataset and for each basket builds a list of all the combinations of dimension 2 with items contained, discarding the ones that contains a non frequent sigleton, then the memory is filled also with the pairs and their frequency. Again, the filtering step is performed.\\
-From this point, the algorithm looks for all the tuples of dimension k > 2 and it becomes important the sorting pre-phase mentioned before: all the frequent tuples of dimension k-1 are "joined" if they have in common the first k-2 elements, then the whole dataset is scanned and each basket is ordered and all the possible tuples of dimension k are built so that it is possible to check if a tuple is present or not in that basket.\\
-These operations continue until it is not possible to find a single tuple of dimension k that is frequent.
+At the very first step the algorithm starts counting the number of occurrences of each item in the dataset (singleton), so in this phase the main memory is partially filled and the first scan of the data is performed. Once all the frequencies are found, the singletons are filtered using a predefined threshold.\\
+Now, the algorithm scans again the dataset and for each basket builds a list of all the combinations of dimension 2 with items contained, discarding those that contains a non frequent sigleton, then the memory is filled also with the pairs and their frequency. Again, the filtering step is performed.\\
+From this point, the algorithm looks for all the tuples of dimension k > 2 and it becomes important the sorting pre-phase mentioned before: in order to avoid duplications all the frequent tuples of dimension k-1 are "joined" if they have in common the first k-2 elements, then all the possible tuples of dimension k are built so that it is possible to check if a tuple is present or not in that basket.\\
+These steps continue until it is not possible to find a single tuple of dimension k that is frequent.
 
 
 \subsection{PCY (single hash)}
-An improvement of this algorithm is the PCY (Park, Chen, Yu) that exploit the free space present in memory while counting the frequency of itemsets of size k, creating an hashmap in which counts, in the position satated by the hash of the itemset of size k+1, the number of times the latter occurs in the baskets. Note that it is possible to have collisions, but this approach aims to lower the number of itemsets that has to be saved in memory and for which is necessary to count the frequency, instead of directly delete each non frequent itemsets.\\
-The hashmap is compressed into a bitmap for the purpose of saving space and permitting to create only itemsets marked as possible frequent on this map. To reach frequent itemsets of size k is necessary to pass k times over data, as the previous algorithm, but is possible reduce the candidates at every iteration. 
+An improvement of this algorithm is the PCY (Park, Chen, Yu) that exploit the memory's free space while counting the frequency of itemsets of given size k:
+as the base apriori algorithm does the first step is the counting of singleton frequency, but in this step, for each basket also all the pairs of items are computed
+and with the use of an hash function they are mapped into a position in an hashmap and the corresponding position in is updated incrementing the value by one. Once the baskets are fully scanned the hashmap is compressed into a bitmap, substituting with a 1 all those positions whose frequencies are above a threshold, 0 otherwise. 
+Of course the use of hash functions brings "collisions" so it is not sure that what a given hashmap position contains is the frequency of a single pair, but it is sure that if a frequency is not above the threshold all the pairs mapped in that position are not frequent.\\
+At the next step, the pairs' frequencies are computed but only if the corrisponding bit in the bitmap is a 1.
+This version of the apriori algorithm allows to reduce significantly the number of sets kept in memory at each step, using the same number of access in the secondary storage of the basic apriori algorithm.
+ 
 \subsection{SON}
-This algorithm is developed to parallelize the computation of frequent itemsets, working over chunks (partition) of the data. It's not a proper sampling algorithm because it will work on every chunk and, in the end, the totality of data will be elaborated.\\
-It'a a way to use the previous implementations (A-priori/PCY) in a distributed form, to reduce the single workload over a chunk and parallelize the computation, and then put together the results. Is important enforce appropriate adjustment to run the A-priori over every chunk, like the repositioning of the threshold that divide frequent itemsets fron not frequent.\\
+This algorithm is designed with the purpose of parallelizing the computation of frequent itemsets, working over chunks (partition) of the data.\\
+The idea is to exploit the basic apriori and the PCY algorithm but in a distributed manner so to reduce the computational workload:
+The algorithm starts applying the Apriori or PCY on a single chunk, using as threshold for each chunk p*s, where p is the fraction of total baskets contained in a single chunck (so 1/p is the number of chunks), then all the results obtained are putted together and all the dataset is fully scanned in order to delete false positive, since a chunck can find a set whose support in bigger then p*s, but the sum of the frequencies coming from all the chunks is below s.
+
+
 \subsection{Toivonen}
-This algorithm, as the previously, exploits the A-priori or PCY implementation to obtain the frequent itemsets of a sample of the complete data (providing the adjusted threshold). This algorithm exploits the notion of \textbf{Negative Border} that once created will be used to check if the frequent itemsets in the sample are frequent even globally. The negative border is built extracting every itemsets that is not frequent but that have frequent immediate subsets. The algorithm, operating just over the sample can say if the candidate frequent itemsets are the right ones even for the totality of data, with a single passage over the complete dataset.
+This algorithm exploits the Apriori or PCY algorithm, as the previous one, but it considers only a sample of data instead of chunks: 
+the algorithm start by selecting a fraction p of all the baskets and adjusting the threshold s by multiplying q*p*s, where q is a integer very close to one (tipically 0.95). It continues by applying the basic apriori or the pcy to the sample and obtains the frequent sets in the sample. Now, the particularity of this algorithm is applied: the "negative border" is built by using a the sample's frequent sets.\\
+The negative border is a set of itemsets that are not frequent, but whose immediate subset are frequent in the sample.\\
+The last part is checking if there is a set in the negative border that is frequent in all the baskets: if there are no frequent sets, the algorithms outputs the frequent sets found in the sample, otherwise does not output anothing and the algorithm must bu re-runned with another sample.
+
 \subsection{Implementation}
 These algorithms have been implemented with python using a sequential way for the PCY and the MapReduce paradigm to apply the PCY according the SON and Toivonen philosophy.
 
