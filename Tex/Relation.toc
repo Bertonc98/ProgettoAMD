@@ -13,6 +13,6 @@
 \contentsline {subsection}{\numberline {7.1}Size of candidates and timing with different algorithms}{11}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Size of candidates and times with different hash size (PCY)}{12}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Time at change of threshold}{14}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Size of negative border}{15}{subsection.7.4}%
-\contentsline {section}{\numberline {8}Results}{15}{section.8}%
+\contentsline {subsection}{\numberline {7.4}Size and timing of negative border}{16}{subsection.7.4}%
+\contentsline {section}{\numberline {8}Results}{16}{section.8}%
 \contentsfinish 

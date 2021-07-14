@@ -16,6 +16,7 @@
 \usepackage[ruled,longend]{algorithm2e}
 \usepackage{imakeidx}
 \usepackage{hyperref}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
@@ -70,7 +71,7 @@ The dataset the dataset on which the analysis was carried out is the "\href{http
 \vspace{-0.4cm}\item[-]{\it tconst} (string) is an alphanumeric identifier of the movie.
 \vspace{-0.4cm}\item[-]{\it ordering} (integer) is a number used to uniquely identify rows for a given movie.
 \vspace{-0.4cm}\item[-]{\it nconst} (string) is an alphanumeric identifier of the cast/crew person.
-\vspace{-0.4cm}\item[-]{\it category} (string) is the role of that person in the movie (a person can do different roles in the same movie).
+\vspace{-0.4cm}\item[-]{\it category} (string) is the role of that person in the movie (a person can do different roles in the same movie). Possible values: 'actor', 'actress', 'archive footage', 'archive sound', 'cinematographer', 'composer', 'director', 'editor', 'producer', 'production designer', 'self', 'writer'.
 \vspace{-0.4cm}\item[-]{\it job} (string) is a further specification of the role (can be empty, with the symbol "\textbackslash N").
 \vspace{-0.4cm}\item[-]{\it characters} (string) is the name of the character played (can be empty, with the symbol"\textbackslash N").
 \end{itemize}
@@ -168,8 +169,11 @@ Over the whole dataset the four algorithm has returned:
  \hline
 \end{tabular}
 \end{center}
+In the first pair of columns is evident the improvement given by the pcy in the filtering of candidates, at the expense of time comparing with the Apriori.\\
+
 \subsection{Size of candidates and times with different hash size (PCY)}
-Over a sample of 600000 baskets\\
+Over a sample of 600000 baskets.\\
+The singletons are not counted, as their creation will not be affected from the PCY algorithm.\\
 \includegraphics[scale=1]{size_by_hsize.png}\\
 \begin{center}
 \begin{tabular}{ |c||c|c|c|c|c|c|c|c|c| } 
@@ -181,21 +185,44 @@ Over a sample of 600000 baskets\\
 \end{tabular}
 \end{center}
 \includegraphics[scale=1]{pcy_hsize_time.png}\\
-MISS SON PCY TIMING\\
-
+The number of candidates created drastically decrease at first time, due to the increase of position in the hashmap and the decreasing probability of collisions that creates false positive.\\
+In regard of time can be seen a raise of computing times due to the handling of the hashmap, but just a bit exchange of some seconds to obtain a very lower quantity of candidates to be compared.\\
 \includegraphics[scale=1]{sonpcy_candidates.png}\\
-
+\begin{center}
+\hspace*{-1,5cm}
+\begin{tabular}{ |c||c|c|c|c|c|c|c|c|c| } 
+ \hline
+ Hash size & $2^{12}$ & $2^{13}$ & $2^{14}$ & $2^{15}$ & $2^{16}$ & $2^{17}$ & $2^{18}$ & $2^{19}$ & $2^{20}$ \\
+ \hline
+ Candidates & 1304840 & 1191355 & 432588 & 141776 & 59356 & 29983 &  4761 & 3438 & 2775 \\
+ \hline
+\end{tabular}
+\end{center}
+MISS SON PCY TIMING\\
 \subsection{Time at change of threshold}
 Over the same sample, containing 600000 baskets, the algorithms has been completed in:\\
-TABLE\\
-\includegraphics[scale=1]{times.png}
-\\
-In the SON application (both with apriori and PCY) have been saved the worst time over a node, due to the parallelization of the search, not the sum of the execution time of each node.
-\subsection{Size of negative border}
+\includegraphics[scale=1.1]{times.png}\\
+\begin{center}
+\begin{tabular}{ |P{3cm}|P{2cm}|P{2cm}|P{2cm}|P{2cm}| } 
+ \hline
+ Threshold & Apriori & PCY & SON Apriori & SON PCY \\
+ \hline
+ 150 & 26.04 & 80.3 & 59.4 & 66.0 \\
+ 200 & 22.17 & 73.13 & 45.51 & 51.23\\
+ 250 & 21.24 & 73.46 & 39.15 & 45.1\\
+ 300 & 18.19 & 64.96 & 35.51 & 41.26\\
+ 350 & 17.72 & 64.81 & 34.12 & 38.6\\
+ 400 & 13.59 & 53.35 & 33.07 & 37.75\\
+ 450 & 13.67 & 53.04 & 31.83 & 35.86\\
+ \hline
+\end{tabular}
+\end{center}
+In the SON application (both with apriori and PCY) have been saved the worst time over a node, due to the parallelization of the search, not the sum of the execution time of each node.\\
+\subsection{Size and timing of negative border}
 With different size of sample
-The singletons are not counted, as their creation will not be affected from the PCY algorithm.\\
-
-With different threshold
+\\
+With different threshold\\
+\includegraphics[scale=1]{nb_sizes.png}\\
 \section{Results}
 {\it I/We declare that this material, which I/We now submit for assessment, is entirely my/our own work and has not been taken from the work of others, save and to the extent that such work has been cited and acknowledged within the text of my/our work. I/We understand that plagiarism, collusion, and copying are grave and serious offences in the university and accept the penalties that would be imposed should I engage in plagiarism, collusion or copying. This assignment, or any part of it, has not been previously submitted by me/us or any other person for assessment on this or any other course of study.}
 
