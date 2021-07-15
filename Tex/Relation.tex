@@ -181,28 +181,27 @@ In the following table are listed the execution time (last row) and the number o
  \hline
  Size & Apriori & PCY & SON apriori & SON PCY \\
  \hline
- 2 & 11144462 & 11144462 & 11144052 & 11144052\\ 
- 3 & 10011 & 33 & 708645 & 708645\\ 
- 4 & 13 & 13 & 1104 & 1104\\ 
- 5 & 2 & 2 & 554 & 554 \\
- 6 & - & - & 355 & 355 \\
- 7 & - & - & 182 & 182 \\
- 8 & - & - & 62 & 62 \\
- 9 & - & - & 12 & 12 \\
- 10 & - & - & 1 & 1 \\
+ 2 & 11144462 & 11144462 & 1311498 & 6880\\ 
+ 3 & 10011 & 33 & 2782 & 1866\\ 
+ 4 & 13 & 13 & 1297 & 1167\\ 
+ 5 & 2 & 2 & 737 & 690 \\
+ 6 & - & - & 374 & 358 \\
+ 7 & - & - & 136 & 133 \\
+ 8 & - & - & 30 & 30 \\
+ 9 & - & - & 3 & 3 \\
+ 10 & - & - & - & - \\
  \hline
- Sec & 87 & 335 & 275 & 551\\
+ Sec & 87 & 335 & 292 & 584\\
  \hline
 \end{tabular}
 \end{center}
 The number of candidates is the number of itemets of size k analyzed, created from the previous frequent itemsets of size k-1. The number of singletons is not reported since they are equal for all the algorithm.\\
 In the first pair of columns is evident the improvement given by the PCY in filtering candidates, but, on the other hand, it is evident the PCY's computation time is nearly 4 times the Apriori's one. The same time difference is evident in the two SON algorithms.\\
-WHY EQUAL PCY/APRIORI?
+
 
 \subsection{Size of candidates and times with different hash size (PCY)}
-The sequent measures are performed over a sample of 600000 baskets.\\
-The singletons are not counted, as their creation will not be affected from the PCY algorithm.\\
-The aim is to show how does the PCY work as the size of the hashmap grows.\\
+The subsequent chart shows the number of candidates found by the PCY algorithm with different hashmap sizes. It is evident that the increase of the hashmap size the number of candidates is lowered very quickly due to the decreasing probability of collisions.\\
+The sequent measures are performed over the same sample, containing 600000 baskets, the algorithms has been completed in the times reported in the table.\\
 \includegraphics[scale=1]{size_by_hsize.png}\\
 \begin{center}
 \begin{tabular}{ |c||c|c|c|c|c|c|c|c|c| } 
@@ -214,8 +213,7 @@ The aim is to show how does the PCY work as the size of the hashmap grows.\\
 \end{tabular}
 \end{center}
 \includegraphics[scale=1]{pcy_hsize_time.png}\\
-The number of candidates created drastically decrease at first time, due to the increase of position in the hashmap and the decreasing probability of collisions that creates false positive.\\
-In regard of time can be seen a raise of computing times due to the handling of the hashmap, but just a bit exchange of some seconds to obtain a very lower quantity of candidates to be compared.\\
+Regarding time, it can be seen an increment of computing times due to the handling of the hashmap, although it is just a difference of few seconds.\\
 \includegraphics[scale=1]{sonpcy_candidates.png}\\
 \begin{center}
 \hspace*{-1,5cm}
@@ -229,8 +227,10 @@ In regard of time can be seen a raise of computing times due to the handling of 
 \end{center}
 MISS SON PCY TIMING\\
 \subsection{Time at change of threshold}
-The sequent measures are performed over the same sample, containing 600000 baskets, the algorithms has been completed in the times reported in the table.\\
-Is important underline that for the SON application (both with apriori and PCY) has been saved the worst time over a node, due to the idea of parallelization of the applying an algorithm over a chunk it will not be correct count the summed amount of times.\\
+This chart and table show the time of execution of each algorithm varying the threshold. 
+The sequent measures are performed over the same sample, containing 600000 baskets.
+It is important to underline that for the SON application (with both Apriori and PCY) only the worst time over a node has been saved due to the parallelized computation.\\
+
 \includegraphics[scale=1.1]{times.png}\\
 \begin{center}
 \begin{tabular}{ |P{3cm}|P{2cm}|P{2cm}|P{2cm}|P{2cm}| } 
@@ -248,8 +248,8 @@ Is important underline that for the SON application (both with apriori and PCY) 
 \end{tabular}
 \end{center}
 \subsection{Size of negative border}
-For the Toivonen algorithm the point is to analyze the Negative border, because the extraction of frequent candidates is only an application of one of the Apriori or PCY algorithm.\\
-The size of the negative border has been collected changing the threshold, to see how big or small it would become, and to ensure that it will fit in memory\\
+Concerning the Toivonen algorithm the key point is the analysis of the Negative border, because the extraction of frequent candidates is only an application of one of the Apriori or PCY algorithm.\\
+In the following figure it is shown the negative border size variation changing the threshold using a sample of 600367 (1/6 of the total dataset): the increasing of the threshold produce a lower number of candidates and so a smaller negative border.\\
 \includegraphics[scale=1]{nb_sizes.png}\\
 \section{Results}
 {\it I/We declare that this material, which I/We now submit for assessment, is entirely my/our own work and has not been taken from the work of others, save and to the extent that such work has been cited and acknowledged within the text of my/our work. I/We understand that plagiarism, collusion, and copying are grave and serious offences in the university and accept the penalties that would be imposed should I engage in plagiarism, collusion or copying. This assignment, or any part of it, has not been previously submitted by me/us or any other person for assessment on this or any other course of study.}
