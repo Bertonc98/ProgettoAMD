@@ -168,31 +168,35 @@ To compress the hashmap in a bitmap is used the library Bitmap and it is created
 \subsection{SON}
 The SON algorithm has been implemented in order to compute with both the algorithms explained above. The main implementation difference is that the "basket.txt" file is divided in chunks and the basic Apriori/PCY is applied to a small set. The execution can be done in a serial or parallelized way, in this case the execution is performed sequentially. In the serial version, it takes in input the size of the chunk and reads only those number of rows at the time, then execute the chosen algorithm and saves the relulting frequent sets of each chunk in a list. When all the chunks have been analyzed, it is necessary to check the presence of FP: from the list of candidate frequent sets it is created a Dictionary and the full file is scanned again updating the frequency of the candidates; at the end, the Dictionary is filtered by frequency and all the true frequent sets are returned.
 
+\subsection{Toivonen}
+As the previous one, also this algorithm works with both the basic Apriori and the PCY and, since it is a merely application of one of the two over a sample of the dataset, the most relevant part is how the negative border is built: it starts taking all the non-frequent singletons from the sample, then for each k finds all the itemset of lenght k composed by frequent sets of length k-1 that are not frequent. This procedure in repeated for all k <= max(len(x)| x $\in$ {frequent candidate})+1. All the sets found are added to a list that will be converted into a Dictionary, as all the frequent candidates found by the Apriori/PCY. This two structure are particularly useful in subsequent step, that is search for false positive in the candidates and frequent itemset in the negative border, both considering the whole dataset: so the Dictionary will contain as key the itemset and as value its frequency.
+At the end, if the NB contains itemset with frequency above the threshold the algorithm ends printing "no answer", otherwise it returns the frequent sets, previously filtered from false positive.
+
 \section{Scaling of proposed solutions}
 \section{Experiments}
 \subsection{Size of candidates and timing with different algorithms}
-Over the whole dataset the four algorithm has the timing and the number of candidates frequent itemsets as reported in the table:
+In the following table are listed the execution time (last row) and the number of candidates generated for each size, considering the whole dataset.
 \begin{center}
 \begin{tabular}{ |c|c|c|c|c| } 
  \hline
  Size & Apriori & PCY & SON apriori & SON PCY \\
  \hline
- 1 & 11144462 & 11144462 & 11144052 & 11144052\\ 
- 2 & 10011 & 33 & 708645 & 708645\\ 
- 3 & 13 & 13 & 1104 & 1104\\ 
- 4 & 2 & 2 & 554 & 554 \\
- 5 & - & - & 355 & 355 \\
- 6 & - & - & 182 & 182 \\
- 7 & - & - & 62 & 62 \\
- 8 & - & - & 12 & 12 \\
- 9 & - & - & 1 & 1 \\
+ 2 & 11144462 & 11144462 & 11144052 & 11144052\\ 
+ 3 & 10011 & 33 & 708645 & 708645\\ 
+ 4 & 13 & 13 & 1104 & 1104\\ 
+ 5 & 2 & 2 & 554 & 554 \\
+ 6 & - & - & 355 & 355 \\
+ 7 & - & - & 182 & 182 \\
+ 8 & - & - & 62 & 62 \\
+ 9 & - & - & 12 & 12 \\
+ 10 & - & - & 1 & 1 \\
  \hline
  Sec & 87 & 335 & 275 & 551\\
  \hline
 \end{tabular}
 \end{center}
-The candidates number is the number of itemets of size k analyzed, created from the previous frequent itemsets of size k-1. The exception is the singleton, because they are not created from a previous list of frequent itemsets, but only extracted from the baskets.\\
-In the first pair of columns is evident the improvement given by the pcy in the filtering of candidates, at the expense of time comparing with the Apriori.\\
+The number of candidates is the number of itemets of size k analyzed, created from the previous frequent itemsets of size k-1. The number of singletons is not reported since they are equal for all the algorithm.\\
+In the first pair of columns is evident the improvement given by the PCY in filtering candidates, but, on the other hand, it is evident the PCY's computation time is nearly 4 times the Apriori's one. The same time difference is evident in the two SON algorithms.\\
 WHY EQUAL PCY/APRIORI?
 
 \subsection{Size of candidates and times with different hash size (PCY)}
