@@ -173,9 +173,10 @@ As the previous one, also this algorithm works with both the basic Apriori and t
 At the end, if the NB contains itemset with frequency above the threshold the algorithm ends printing "no answer", otherwise it returns the frequent sets, previously filtered from false positive.
 
 \section{Scaling of proposed solutions}
-\section{Experiments}
+CHARTS
+\section{Experiments and results}
 \subsection{Size of candidates and timing with different algorithms}
-In the following table are listed the execution time (last row) and the number of candidates generated for each size, considering the whole dataset.
+In the following table are listed the execution time (last row) and the number of candidates generated for each itemset size, considering the whole dataset.
 \begin{center}
 \begin{tabular}{ |c|c|c|c|c| } 
  \hline
@@ -191,17 +192,18 @@ In the following table are listed the execution time (last row) and the number o
  9 & - & - & 3 & 3 \\
  10 & - & - & - & - \\
  \hline
- Sec & 87 & 335 & 292 & 584\\
+ Sec & 87 & 335 & 160 & 209\\
  \hline
 \end{tabular}
 \end{center}
-The number of candidates is the number of itemets of size k analyzed, created from the previous frequent itemsets of size k-1. The number of singletons is not reported since they are equal for all the algorithm.\\
-In the first pair of columns is evident the improvement given by the PCY in filtering candidates, but, on the other hand, it is evident the PCY's computation time is nearly 4 times the Apriori's one. The same time difference is evident in the two SON algorithms.\\
-
+The number of candidates is the number of itemsets of size k analyzed, created from the previous frequent itemsets of size k-1. The number of singletons is not reported since they are equal for all the algorithms.\\
+In the SON columns the time is considered over the mean partition execution plus the time necessary to filter out false positive (nearly a minute).
+In the first pair of columns is evident the improvement given by the PCY in filtering candidates, but, on the other hand, it is evident the PCY's computation time is nearly 4 times the Apriori's one due to the time needed to handle the hashmap. The same time difference is evident in the two SON algorithms. It is even clear that the number of candidates decreases, even in the SON, using the PCY technique.\\
+In the two SON columns there are itemsets of greater size because the threshold in the partition is lowered and this take to have an higher number of candidates of increasing size.
 
 \subsection{Size of candidates and times with different hash size (PCY)}
-The subsequent chart shows the number of candidates found by the PCY algorithm with different hashmap sizes. It is evident that the increase of the hashmap size the number of candidates is lowered very quickly due to the decreasing probability of collisions.\\
-The sequent measures are performed over the same sample, containing 600000 baskets, the algorithms has been completed in the times reported in the table.\\
+The subsequent chart shows the number of candidates found by the PCY algorithm with different hashmap sizes. It is evident that the increase of the hashmap size causes a very quick lowering in the number of candidates due to the decreasing probability of collisions.\\
+The sequent measures are performed over the same sample, containing 600000 baskets, the algorithms has been completed in the times reported in the second chart.\\
 \includegraphics[scale=1]{size_by_hsize.png}\\
 \begin{center}
 \begin{tabular}{ |c||c|c|c|c|c|c|c|c|c| } 
@@ -212,8 +214,6 @@ The sequent measures are performed over the same sample, containing 600000 baske
  \hline
 \end{tabular}
 \end{center}
-\includegraphics[scale=1]{pcy_hsize_time.png}\\
-Regarding time, it can be seen an increment of computing times due to the handling of the hashmap, although it is just a difference of few seconds.\\
 \includegraphics[scale=1]{sonpcy_candidates.png}\\
 \begin{center}
 \hspace*{-1,5cm}
@@ -225,6 +225,11 @@ Regarding time, it can be seen an increment of computing times due to the handli
  \hline
 \end{tabular}
 \end{center}
+The SON algorithm with the PCY applied over partitions shows a behaviour analogue to the one reported by the PCY alone, a consistent decrease in the number of the candidates in the first points and a smaller decreasing having the hashmap big enough to decrease the probability of collisions.\\
+The SON return a smaller number of candidates because it works over partitions of smaller size that the whole dataset.\\
+\includegraphics[scale=1]{pcy_hsize_time.png}\\
+Regarding time, it can be seen an increment of computing times due to the handling of the hashmap, although it is just a difference of few seconds that are going to increase in a smother way.\\
+
 \subsection{Time at change of threshold}
 This chart and table show the time of execution of each algorithm varying the threshold. 
 The sequent measures are performed over the same sample, containing 600000 baskets.
@@ -250,7 +255,7 @@ It is important to underline that for the SON application (with both Apriori and
 Concerning the Toivonen algorithm the key point is the analysis of the Negative border, because the extraction of frequent candidates is only an application of one of the Apriori or PCY algorithm.\\
 In the following figure it is shown the negative border size variation changing the threshold using a sample of 600367 (1/6 of the total dataset): the increasing of the threshold produce a lower number of candidates and so a smaller negative border.\\
 \includegraphics[scale=1]{nb_sizes.png}\\
-\section{Results}
+\newpage
 {\it I/We declare that this material, which I/We now submit for assessment, is entirely my/our own work and has not been taken from the work of others, save and to the extent that such work has been cited and acknowledged within the text of my/our work. I/We understand that plagiarism, collusion, and copying are grave and serious offences in the university and accept the penalties that would be imposed should I engage in plagiarism, collusion or copying. This assignment, or any part of it, has not been previously submitted by me/us or any other person for assessment on this or any other course of study.}
 
 \begin{comment}

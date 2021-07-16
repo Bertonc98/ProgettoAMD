@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.10)  15 JUL 2021 16:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.10)  15 JUL 2021 23:35
 entering extended mode
 **./Relation.tex
 (Relation.tex
@@ -607,13 +607,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write5
 \openout5 = `Relation.toc'.
 
- [2] [3] [4]
+ [2] [3]
 Overfull \hbox (7.87317pt too wide) in paragraph at lines 64--65
 []\OT1/cmr/m/it/14.4 title.ratings.tsv \OT1/cmr/m/n/14.4 con-tains the IMDb rat
 -ing in-for-ma-tions about the movies.
  []
 
-[5]
+[4]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 7
 4.
  (C:\Users\Alberto\Documents\Universita\MiKtex\tex/latex/base\omscmr.fd
@@ -637,13 +637,13 @@ Overfull \hbox (0.60635pt too wide) in paragraph at lines 93--99
 nd \OT1/cmr/m/it/14.4 name.basics.tsv
  []
 
-[6]
+[5]
 Underfull \hbox (badness 10000) in paragraph at lines 101--107
 
  []
 
-[7] [8]
-<apriori.jpg, id=177, 833.1125pt x 169.63374pt>
+[6] [7]
+<apriori.jpg, id=167, 833.1125pt x 169.63374pt>
 File: apriori.jpg Graphic file (type jpg)
 <use apriori.jpg>
 Package pdftex.def Info: apriori.jpg  used on input line 122.
@@ -653,94 +653,95 @@ Underfull \hbox (badness 10000) in paragraph at lines 125--132
 
  []
 
-[9 <./apriori.jpg>] [10]
+[8 <./apriori.jpg>] [9]
 Underfull \hbox (badness 10000) in paragraph at lines 140--144
 
  []
 
-[11]
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 150--156
 
  []
 
-[12] [13] [14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 198--200
-
- []
-
-<size_by_hsize.png, id=208, 402.50375pt x 279.0425pt>
+[11] [12] [13] [14]
+<size_by_hsize.png, id=198, 402.50375pt x 279.0425pt>
 File: size_by_hsize.png Graphic file (type png)
 <use size_by_hsize.png>
-Package pdftex.def Info: size_by_hsize.png  used on input line 205.
+Package pdftex.def Info: size_by_hsize.png  used on input line 207.
 (pdftex.def)             Requested size: 402.50276pt x 279.04181pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 203--206
+Underfull \hbox (badness 10000) in paragraph at lines 205--208
 
  []
 
-[16]
-<pcy_hsize_time.png, id=214, 383.4325pt x 279.0425pt>
-File: pcy_hsize_time.png Graphic file (type png)
-<use pcy_hsize_time.png>
-Package pdftex.def Info: pcy_hsize_time.png  used on input line 215.
-(pdftex.def)             Requested size: 383.43156pt x 279.04181pt.
-<sonpcy_candidates.png, id=215, 415.5525pt x 279.0425pt>
+[15]
+<sonpcy_candidates.png, id=204, 415.5525pt x 279.0425pt>
 File: sonpcy_candidates.png Graphic file (type png)
 <use sonpcy_candidates.png>
 Package pdftex.def Info: sonpcy_candidates.png  used on input line 217.
 (pdftex.def)             Requested size: 415.55148pt x 279.04181pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--218
+Underfull \hbox (badness 10000) in paragraph at lines 217--218
 
  []
 
-[17 <./size_by_hsize.png>] [18 <./pcy_hsize_time.png>]
+[16 <./size_by_hsize.png>]
 Overfull \hbox (51.08234pt too wide) in paragraph at lines 219--227
  |  [] 
  []
 
+<pcy_hsize_time.png, id=211, 383.4325pt x 279.0425pt>
+File: pcy_hsize_time.png Graphic file (type png)
+<use pcy_hsize_time.png>
+Package pdftex.def Info: pcy_hsize_time.png  used on input line 230.
+(pdftex.def)             Requested size: 383.43156pt x 279.04181pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 229--232
+Underfull \hbox (badness 10000) in paragraph at lines 228--232
 
  []
 
-<times.png, id=227, 383.4325pt x 262.9825pt>
+[17 <./sonpcy_candidates.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 234--237
+
+ []
+
+<times.png, id=217, 383.4325pt x 262.9825pt>
 File: times.png Graphic file (type png)
 <use times.png>
-Package pdftex.def Info: times.png  used on input line 233.
+Package pdftex.def Info: times.png  used on input line 238.
 (pdftex.def)             Requested size: 421.77705pt x 289.28162pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 233--234
+Underfull \hbox (badness 10000) in paragraph at lines 238--239
 
  []
 
-[19 <./sonpcy_candidates.png>]
-<nb_sizes.png, id=234, 408.52625pt x 279.0425pt>
+[18 <./pcy_hsize_time.png>]
+<nb_sizes.png, id=223, 408.52625pt x 279.0425pt>
 File: nb_sizes.png Graphic file (type png)
 <use nb_sizes.png>
-Package pdftex.def Info: nb_sizes.png  used on input line 252.
+Package pdftex.def Info: nb_sizes.png  used on input line 257.
 (pdftex.def)             Requested size: 408.52525pt x 279.04181pt.
 
-Overfull \hbox (1.27097pt too wide) in paragraph at lines 250--253
+Overfull \hbox (1.27097pt too wide) in paragraph at lines 255--258
 \OT1/cmr/m/n/14.4 chang-ing the thresh-old us-ing a sam-ple of 600367 (1/6 of t
 he to-tal dataset):
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--253
+Underfull \hbox (badness 10000) in paragraph at lines 255--258
 
  []
 
-[20 <./times.png>] [21 <./nb_sizes.png>] Excluding 'comment' comment. [22]
+[19 <./times.png>] [20 <./nb_sizes.png>] Excluding 'comment' comment. [21]
 (Relation.aux)
 Package rerunfilecheck Info: File `Relation.out' has not changed.
-(rerunfilecheck)             Checksum: 19B5DC76DC97B4F6780366739233A3D2;3043.
+(rerunfilecheck)             Checksum: 8A10CBD9B47597BF6DCDE8B8C9E1C369;3030.
  ) 
 Here is how much of TeX's memory you used:
- 12168 strings out of 479334
- 187393 string characters out of 2857078
- 491443 words of memory out of 3000000
- 29383 multiletter control sequences out of 15000+200000
+ 12165 strings out of 479334
+ 187366 string characters out of 2857078
+ 491448 words of memory out of 3000000
+ 29382 multiletter control sequences out of 15000+200000
  411626 words of font info for 58 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,9n,74p,926b,522s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -752,9 +753,9 @@ ublic/amsfonts/cm/cmr10.pfb><C:/Users/Alberto/Documents/Universita/MiKtex/fonts
 ex/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Alberto/Documents/Univers
 ita/MiKtex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alberto/Document
 s/Universita/MiKtex/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Relation.pdf (22 pages, 220459 bytes).
+Output written on Relation.pdf (21 pages, 219687 bytes).
 PDF statistics:
- 285 PDF objects out of 1000 (max. 8388607)
- 46 named destinations out of 1000 (max. 500000)
- 207 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 275 PDF objects out of 1000 (max. 8388607)
+ 44 named destinations out of 1000 (max. 500000)
+ 199 words of extra memory for PDF output out of 10000 (max. 10000000)
 
