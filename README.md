@@ -1,4 +1,4 @@
-# ProgettoAMD by Ricopallazzo & RedMax
+# "ProgettoAMD" by Ricopallazzo & RedMax
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Bertonc98/ProgettoAMD/blob/main/)
 
 This repository contains an implementation of:
